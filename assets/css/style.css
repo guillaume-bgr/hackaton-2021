@@ -1,0 +1,9 @@
+.main {
+    height: 90vh;
+    overflow: scroll;
+}
+
+.case {
+    margin: 1rem;
+    height: 10em;
+}
