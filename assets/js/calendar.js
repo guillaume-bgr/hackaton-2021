@@ -30,12 +30,25 @@ cases.forEach((item) => {
 	item.addEventListener("click", () => {
 		if (item.dataset.date <= today) {
 			item.classList.add("active");
+			addContent(item);
 		}
 	});
 
 	if (item.classList.contains("active")) {
-		const title = document.createElement("h2");
-		title.textContent = "test";
-		item.append(title);
+		addContent(item);
 	}
 });
+
+function addContent(item) {
+	const title = document.createElement("h2");
+	const summary = document.createElement("p");
+	const button = document.createElement("a");
+	title.textContent = "Titre";
+	summary.textContent = "Résumé";
+	button.textContent = "Voir plus";
+	button.href = "https://www.google.com";
+	button.target = "_blank";
+	item.append(title);
+	item.append(summary);
+	item.append(button);
+}
